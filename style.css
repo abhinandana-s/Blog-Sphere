@@ -1,0 +1,238 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#070b18;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.bg{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#8b5cf6 0%,transparent 30%),
+    radial-gradient(circle at top right,#06b6d4 0%,transparent 25%),
+    radial-gradient(circle at bottom,#ec4899 0%,transparent 30%);
+    z-index:-1;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.glass{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 8px 32px rgba(0,0,0,.3);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.navbar h1{
+    font-size:2rem;
+    background:linear-gradient(
+        90deg,
+        #00e5ff,
+        #7c4dff
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.auth-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    margin-top:40px;
+}
+
+.auth-card,
+.create-post-card{
+    padding:30px;
+    border-radius:20px;
+}
+
+.auth-card h2,
+.create-post-card h2{
+    margin-bottom:20px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,.08);
+    color:white;
+}
+
+textarea{
+    resize:none;
+}
+
+.btn{
+    border:none;
+    padding:12px 22px;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    transition:.3s;
+}
+
+.gradient-btn{
+    background:linear-gradient(
+        135deg,
+        #7c4dff,
+        #00e5ff
+    );
+}
+
+.gradient-btn:hover{
+    transform:translateY(-3px);
+}
+
+.danger{
+    background:#ff3d71;
+}
+
+.hidden{
+    display:none;
+}
+
+#postsContainer{
+    margin-top:35px;
+    display:grid;
+    gap:25px;
+}
+
+.post-card{
+    border-radius:20px;
+    padding:25px;
+    animation:fadeIn .4s ease;
+}
+
+.post-header{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.post-title{
+    font-size:1.5rem;
+    margin-bottom:8px;
+}
+
+.meta{
+    color:#cfcfcf;
+    font-size:.9rem;
+}
+
+.post-content{
+    margin-top:20px;
+    line-height:1.7;
+}
+
+.actions{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+}
+
+.comment-section{
+    margin-top:25px;
+}
+
+.comment{
+    background:rgba(255,255,255,.05);
+    padding:15px;
+    border-radius:12px;
+    margin-top:10px;
+}
+
+.comment-meta{
+    font-size:.8rem;
+    color:#bdbdbd;
+    margin-bottom:6px;
+}
+
+.comment-form{
+    margin-top:15px;
+}
+
+.comment-form input{
+    margin-bottom:10px;
+}
+
+.delete-btn{
+    background:#ff4b5c;
+}
+
+.edit-btn{
+    background:#4caf50;
+}
+
+#toast{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#111827;
+    padding:15px 20px;
+    border-radius:12px;
+    opacity:0;
+    transition:.4s;
+}
+
+#toast.show{
+    opacity:1;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    .auth-grid{
+        grid-template-columns:1fr;
+    }
+
+    .navbar{
+        padding:15px;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .post-header{
+        flex-direction:column;
+    }
+
+}
